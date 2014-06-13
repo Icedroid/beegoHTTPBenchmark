@@ -1,5 +1,5 @@
 
-## beego HTTP Benchmark testcases fot origin method, json encode, redis op, mongodb op, log etc...
+## beego HTTP Benchmark testcases for origin request, json encode, redis op, mongodb op, log etc...
 
 I use [beego](http://www.beego.me/ "") bee tool command like follow:
 
