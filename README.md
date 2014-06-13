@@ -20,9 +20,9 @@ Intel(R) Pentium(R) CPU G2020 @ 2.90GHz
 
 memory 8G
 
-| :----:  | :----:  |
 
 | router        |  function |
+| :----:  | :----:  |
 
 | /object     | origin bee api genarate http get method |
 
