@@ -70,6 +70,7 @@ Transfer/sec:      1.11MB
 ```
 
 ### beego original method but add one row: log.Printf()
+```go
 $ wrk -t12 -c400 -d30s http://127.0.0.1:8081/log   
 Running 30s test @ http://127.0.0.1:8081/log
   12 threads and 400 connections
@@ -79,6 +80,6 @@ Running 30s test @ http://127.0.0.1:8081/log
   183585 requests in 30.01s, 61.63MB read
 Requests/sec:   6117.78
 Transfer/sec:      2.05MB
-
+```go
 
 #### I Don't know the result for Requests/sec  why have so  different, Redis Operation used redigo client is so ugly slow. Log also slow...

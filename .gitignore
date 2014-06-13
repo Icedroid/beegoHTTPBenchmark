@@ -21,3 +21,6 @@ _testmain.go
 
 *.exe
 *.test
+tests/main2.go
+tests/hello2
+hello
