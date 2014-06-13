@@ -4,7 +4,7 @@
 I use [beego](http://www.beego.me/ "") bee tool command like follow:
 
 ```go
-$ bee api beegoHTTPBenchmark
+$ bee api hello
 ```
 It will create an app hello in my gopath, and then I add three GET request method for compare raw beego /object,
 ```
