@@ -7,10 +7,10 @@ I use [beego](http://www.beego.me/ "") bee tool command like follow:
 $ bee api beegoHTTPBenchmark
 ```
 It will create an app hello in my gopath, and then I add three GET request method for compare raw beego /object,
-
+```
 Use redis client is [redigo]("https://github.com/garyburd/redigo", "")
 
-use beego 1.2.0
+Use beego 1.2.0
 
 benchmark on my ubuntu computer:
 
@@ -19,17 +19,13 @@ Linux ice-vm 3.8.0-33-generic #48~precise1-Ubuntu SMP Thu Oct 24 16:28:06 UTC 20
 Intel(R) Pentium(R) CPU G2020 @ 2.90GHz
 
 memory 8G
-
+```
 
 | router        |  function |
 | :----:  | :----:  |
-
 | /object     | origin bee api genarate http get method |
-
 | /log     | origin bee api genarate http get method, but add one row log.Printf() |
-
 | /set     | set data to redis hash list |
-
 | /get     | get data from redis hash list |
 
 I run this beego app, then use [wrk](https://github.com/wg/wrk "") for HTTP benchmarking, I get result:
