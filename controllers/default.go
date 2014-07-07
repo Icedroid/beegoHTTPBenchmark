@@ -70,17 +70,86 @@ func (this *ObjectController) SetRedisHash() {
 	var ob models.Object
 	ob.PlayerName = "Icecroid"
 	ob.Score = 100
-	objectid := models.AddOneToRedis(ob)
+	objectid := models.RAddOne(ob)
 	this.Data["json"] = map[string]string{"ObjectId": objectid}
 	this.ServeJson()
 }
 
 func (this *ObjectController) GetRedisHash() {
-	ob, err := models.GetObject()
+	ob, err := models.RGetObject()
 	if err != nil {
 		this.Data["json"] = err
 	} else {
 		this.Data["json"] = ob
+	}
+	this.ServeJson()
+}
+
+func (this *ObjectController) GetRedisHashV2() {
+	ob, err := models.RGetObject2()
+	if err != nil {
+		this.Data["json"] = err
+	} else {
+		this.Data["json"] = ob
+	}
+	this.ServeJson()
+}
+
+func (this *ObjectController) GetRedisHashV3() {
+	ob, err := models.RGetObject3()
+	if err != nil {
+		this.Data["json"] = err
+	} else {
+		this.Data["json"] = ob
+	}
+	this.ServeJson()
+}
+
+func (this *ObjectController) AddMongoRow() {
+	var ob models.Object
+	ob.PlayerName = "Icecroid"
+	ob.Score = 100
+	objectid := models.MAddOne(ob)
+	this.Data["json"] = map[string]string{"ObjectId": objectid}
+	this.ServeJson()
+}
+
+func (this *ObjectController) GetMongoData() {
+	objectId := this.Ctx.Input.Params[":objectId"]
+	if objectId != "" {
+		ob, err := models.MGetOne(objectId)
+		if err != nil {
+			this.Data["json"] = err
+		} else {
+			this.Data["json"] = ob
+		}
+	} else {
+		obs, err := models.MGetObject()
+		if err != nil {
+			this.Data["json"] = err
+		} else {
+			this.Data["json"] = obs
+		}
+	}
+	this.ServeJson()
+}
+
+func (this *ObjectController) GetMongoData2() {
+	objectId := this.Ctx.Input.Params[":objectId"]
+	if objectId != "" {
+		ob, err := models.MGetOne2(objectId)
+		if err != nil {
+			this.Data["json"] = err
+		} else {
+			this.Data["json"] = ob
+		}
+	} else {
+		obs, err := models.MGetObject2()
+		if err != nil {
+			this.Data["json"] = err
+		} else {
+			this.Data["json"] = obs
+		}
 	}
 	this.ServeJson()
 }

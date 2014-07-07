@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/astaxie/beego"
+	_ "hello/docs"
 	_ "hello/routers"
 )
 
@@ -15,5 +16,10 @@ import (
 //	/object/<objectId>	DELETE					Deleting Objects
 
 func main() {
+
+	//	if beego.RunMode == "dev" {
+	//		beego.DirectoryIndex = true
+	//		beego.StaticDir["/swagger"] = "swagger"
+	//	}
 	beego.Run()
 }
